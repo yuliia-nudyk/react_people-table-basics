@@ -1,11 +1,14 @@
 import './App.scss';
 import { Outlet, NavLink } from 'react-router-dom';
 import cn from 'classnames';
+import { useEffect } from 'react';
 
 export const App = () => {
-  const html = document.getElementsByTagName('html')[0];
+  useEffect(() => {
+    const html = document.getElementsByTagName('html')[0];
 
-  html.classList.add('has-navbar-fixed-top');
+    html.classList.add('has-navbar-fixed-top');
+  }, []);
 
   const getLinkClass = ({ isActive }: { isActive: boolean }) =>
     cn('navbar-item ', {
